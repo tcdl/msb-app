@@ -19,7 +19,7 @@ app.start = function(cb) {
   addRoutes(config.routes, routesHandler.config.namespace, '/routes');
   addRoutes(config.routes, statusHandler.config.namespace, '/status');
 
-  routes.load(config.name, config.routes);
+  routes.load(config);
 
   routesHandler.listen();
   statusHandler.listen();

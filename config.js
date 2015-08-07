@@ -1,7 +1,5 @@
 var config = exports;
 
 config.name = ''; // Default: `msb.serviceDetails.name`
-config.bus = {};
+config.ttl = null;
 config.routes = [];
-
-// console.log(config);

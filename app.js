@@ -7,12 +7,10 @@ var routes = require('./lib/services/routes');
 var configSchema = require('./schemas/config');
 
 app.start = function(cb) {
-  msb.configure(config.bus);
   if (!config.name) config.name = msb.serviceDetails.name;
-
   msb.validateWithSchema(configSchema, config);
 
-  var topicsToMonitor = _.uniq(_.pluck(config.routes, 'bus.namespace'));
+  var topicsToMonitor = _.filter(_.uniq(_.pluck(config.routes, 'bus.namespace')));
   channelMonitor.start(topicsToMonitor);
 
   var routesHandler = require('./lib/routesHandler');

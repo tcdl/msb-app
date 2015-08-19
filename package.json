@@ -24,7 +24,7 @@
     "lodash": "^3.10.1",
     "minimist": "^1.1.2",
     "msb": "^0.8.0",
-    "msb-http2bus": "^0.7.0-0"
+    "msb-http2bus": ">=0.7.0-0 <1"
   },
   "devDependencies": {
     "code": "^1.5.0",

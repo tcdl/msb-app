@@ -15,14 +15,27 @@ app.start = function(cb) {
 
   var routesHandler = require('./lib/routesHandler');
   var statusHandler = require('./lib/statusHandler');
+  var staticHandler = require('./lib/staticHandler');
 
   addRoutes(config.routes, routesHandler.config.namespace, '/routes');
   addRoutes(config.routes, statusHandler.config.namespace, '/status');
+
+  config.routes.push({
+    bus: {
+      namespace: staticHandler.config.namespace,
+      waitForResponses: 1
+    },
+    http: {
+      remote: true,
+      path: '/_app'
+    }
+  });
 
   routes.load(config);
 
   routesHandler.listen();
   statusHandler.listen();
+  staticHandler.listen();
 
   console.log(config.name + ' started');
 };

@@ -82,8 +82,8 @@ describe('app', function() {
       expect(routes.load.callCount).equals(1);
       expect(routes.load.lastCall.arg).equals(config);
 
-      expect(ResponderServer.prototype.listen.callCount).equals(2);
-      expect(config.routes.length).equals(4);
+      expect(ResponderServer.prototype.listen.callCount).equals(3);
+      expect(config.routes.length).equals(5);
 
       done();
     });

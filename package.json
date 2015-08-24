@@ -22,9 +22,10 @@
   "homepage": "https://github.com/tcdl/msb-app",
   "dependencies": {
     "lodash": "^3.10.1",
+    "mime-types": "^2.1.5",
     "minimist": "^1.1.2",
     "msb": "^0.8.0",
-    "msb-http2bus": ">=0.7.0 <1"
+    "msb-http2bus": ">=0.7.2 <1"
   },
   "devDependencies": {
     "code": "^1.5.0",
